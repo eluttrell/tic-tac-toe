@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <script src="jquery-3.1.1.js"></script>
+    <script src="tic-tac-toe.js"></script>
+    <style media="screen">
+      html {
+        height: 100%;
+      }
+      body {
+        height: 100%;
+        background: darkslategray;
+        color: white;
+        font-family: Courier;
+      }
+      button.ttt {
+        height: 120px;
+        width: 120px;
+        font-size: 6em;
+        display: inline-block;
+        color: darkslategray;
+      }
+      .board {
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      #spaceFilled {
+        font-size: 3em;
+      }
+      tr {
+        border: 1px solid white;
+      }
+      #winner {
+        position: absolute;
+        top: 35px;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: none;
+        color: black;
+        text-align: center;
+        z-index: 100;
+      }
+      .rules {
+        text-align: center;
+        display: block;
+      }
+      .rules li {
+        list-style-type: none;
+      }
+      #draw {
+        display: none;
+      }
+      #nonDraw {
+        display: block;
+      }
+      .banner {
+        position: absolute;
+        left: 50%;
+        margin-left: -320px;
+        margin-top: -1em;
+        text-align: center;
+        font-size: 4em;
+      }
+      #score {
+        text-align: center;
+      }
+      @media only screen and (min-width: 1300px) {
+        .banner2 {
+          display: none;
+        }
+        
+      }
+      @media only screen and (max-width: 1200px) {
+
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <h2>Tic-Tac-Toe</h2>
+    </div>
+    <div class="banner2">
+      <h2 class="smallBanner">Tic</h2>
+      <h2 class="smallBanner">Tac</h2>
+      <h2 class="smallBanner">Toe</h2>
+    </div>
+    <div class="rules">
+      <h1>Care for a game of Tic-Tac-Toe?</h1>
+      <button id="newGame" type="button" name="button">Start Game</button>
+      <h3>Here are the rules</h3>
+      <ul>
+        <li>Player 1 will always be 'O' and will always start the game</li>
+        <li>Player 2 will always be 'X'</li>
+        <li>You should know the rest of the rules</li>
+      </ul>
+      <p id="spaceFilled"></p>
+    </div>
+    <div id="winner">
+      <h2 id="draw">Draw!</h2>
+      <h2 id="nonDraw"><span id="whoWon"></span> Wins!</h2>
+      <button type="button" name="button" id="again">Play Again?</button>
+    </div>
+    <div class="board">
+      <table>
+        <tr class="r1">
+          <td>
+            <button class="ttt" id="tl" type="button" name="button"></button>
+          </td>
+          <td>
+            <button class="ttt" id="tm" type="button" name="button"></button>
+          </td>
+          <td>
+            <button class="ttt" id="tr" type="button" name="button"></button>
+          </td>
+        </tr>
+        <tr class="r2">
+          <td>
+            <button class="ttt" id="ml" type="button" name="button"></button>
+          </td>
+          <td>
+            <button class="ttt" id="mm" type="button" name="button"></button>
+          </td>
+          <td>
+            <button class="ttt" id="mr" type="button" name="button"></button>
+          </td>
+        </tr>
+        <tr class="r3">
+          <td>
+            <button class="ttt" id="bl" type="button" name="button"></button>
+          </td>
+          <td>
+            <button class="ttt" id="bm" type="button" name="button"></button>
+          </td>
+          <td>
+            <button class="ttt" id="br" type="button" name="button"></button>
+          </td>
+        </tr>
+      </table>
+      <div id="score">
+        <p>
+          Score:
+        </p>
+        <p>
+          X: <span id="xScore"></span>
+        </p>
+        <p>
+          O: <span id="oScore"></span>
+        </p>
+        <p>
+          Draw: <span id="drawScore"></span>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
